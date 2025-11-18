@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --radius: 22px;
+}
+
+@layer base{
+  *{
+    @apply border-white/10;
+  }
+  body{
+    @apply bg-slate-950 font-sans text-slate-100 antialiased;
+    background-image: linear-gradient(145deg, #030303 0%, #101010 45%, #161616 100%);
+    min-height:100vh;
+  }
+}
+
+@layer utilities{
+  .glass{
+    @apply rounded-[28px] border border-white/10 bg-white/5 shadow-[0_20px_90px_rgba(0,0,0,0.65)] backdrop-blur-3xl;
+  }
+  .grid-overlay{
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px);
+    background-size:36px 36px;
+    mask-image: radial-gradient(circle at top, rgba(255,255,255,0.7), transparent 65%);
+    pointer-events:none;
+  }
+}
